@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TestCal</string>
+    <string-array name="mult_temp_dash">
+        <item>寒冷</item>
+        <item>舒适</item>
+        <item>炎热</item>
+    </string-array>
+
+    <string-array name="mult_huim_dash">
+        <item>干燥</item>
+        <item>舒适</item>
+        <item>潮湿</item>
+    </string-array>
+</resources>

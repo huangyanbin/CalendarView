@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RingView">
+        <attr name="totalSection" format="integer"/>
+        <attr name="arcBorder" format="dimension"/>
+        <attr name="arcTextSize" format="dimension"/>
+        <attr name="arcSelectTextColor" format="color"/>
+        <attr name="arcTextColor" format="color"/>
+        <attr name="arc_bg_color" format="color"/>
+        <attr name="arc_select_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="DashboardView">
+        <attr name="totalAngle" format="integer" />
+        <attr name="centerCircleRadius" format="dimension" />
+        <attr name="arcBorderDimen" format="dimension" />
+        <attr name="numberTextSize" format="dimension" />
+        <attr name="graduatedTextSize" format="dimension" />
+        <attr name="angleTextSize" format="dimension" />
+        <attr name="pointLinePercent" format="float" />
+    </declare-styleable>
+</resources>

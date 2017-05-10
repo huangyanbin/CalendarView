@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.palmwifi.testcal.dash.DashboardView
+        android:id="@+id/temp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:layout_weight="1"
+        app:angleTextSize="14sp"
+        app:arcBorderDimen="10dp"
+        app:centerCircleRadius="5dp"
+        app:graduatedTextSize="9sp"
+        app:numberTextSize="8sp"
+        app:pointLinePercent="0.6"
+        app:totalAngle="300" />
+
+    <com.palmwifi.testcal.dash.DashboardView
+        android:id="@+id/humi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:layout_weight="1"
+        app:angleTextSize="14sp"
+        app:arcBorderDimen="12dp"
+        app:centerCircleRadius="10dp"
+        app:graduatedTextSize="9sp"
+        app:numberTextSize="8sp"
+        app:pointLinePercent="0.6"
+        app:totalAngle="300" />
+</LinearLayout>

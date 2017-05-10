@@ -3,6 +3,8 @@ CalendarView
 
 #包含三个自定义View 日历仪表盘 圆盘
 ---------------------------------------
+![github](screenshort.gif)
+
 ### 日历 支持翻页，点击日期，日期状态 ###
 ![github](screenshort_cal.png)
 

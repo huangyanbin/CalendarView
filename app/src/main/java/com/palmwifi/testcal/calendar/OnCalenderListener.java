@@ -5,6 +5,8 @@ public interface OnCalenderListener {
 
 	 void clickDate(CustomDate date);
 
+	 void showDate(CustomDate date);
+
 	 void onMeasureCellHeight(int cellSpace);
 
 	

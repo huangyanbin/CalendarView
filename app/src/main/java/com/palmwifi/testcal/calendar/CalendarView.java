@@ -28,6 +28,7 @@ public abstract class CalendarView extends View {
     private boolean callBackCellSpace;
     public static CustomDate NowDate = new CustomDate();
     private boolean isNeedShowClickDay = true;
+    private boolean isAutoClickFirstDay= true;
 
     public CalendarView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -48,11 +49,9 @@ public abstract class CalendarView extends View {
 
     public abstract CustomDate getClickDate();
 
-    public abstract CustomDate getShowDate();
 
     public abstract RecordState getRecordDateState(CustomDate date);
 
-    public abstract int getClickRow();
 
     public abstract void rightSlide();
 
@@ -257,4 +256,11 @@ public abstract class CalendarView extends View {
         CURRENT_MONTH_DAY, TODAY, CLICK_DAY, PAST_MONTH_DAY, NEXT_MONTH_DAY;
     }
 
+    public boolean isAutoClickFirstDay() {
+        return isAutoClickFirstDay;
+    }
+
+    public void setAutoClickFirstDay(boolean autoClickFirstDay) {
+        isAutoClickFirstDay = autoClickFirstDay;
+    }
 }

@@ -12,8 +12,8 @@ public class CalendarMonthView extends CalendarView {
 
     public static CustomDate mShowDate;
     public static CustomDate mClickDate;
+    public static CustomDate mClickHideDate;
     private OnCalenderListener mCallBack;
-    private int mClickRow;
 
 
     public CalendarMonthView(Context context, AttributeSet attrs) {
@@ -71,10 +71,15 @@ public class CalendarMonthView extends CalendarView {
         if (DateUtil.isCurrentMonth(mShowDate)) {
             isCurrentMonth = true;
             if (isChangeClick)
+                mClickHideDate = CustomDate.modifiDayForObject(mShowDate, monthDay, 0);
                 mClickDate = CustomDate.modifiDayForObject(mShowDate, monthDay, 0);
+
         } else {
-            if (isChangeClick)
-                mClickDate = CustomDate.modifiDayForObject(mShowDate, 1, 0);
+            if (isChangeClick) {
+                if(isAutoClickFirstDay())
+                    mClickDate = CustomDate.modifiDayForObject(mShowDate, 1, 0);
+                mClickHideDate = CustomDate.modifiDayForObject(mShowDate, monthDay, 0);
+            }
         }
         int day = 0;
         for (int j = 0; j < TOTAL_ROW; j++) {
@@ -95,9 +100,13 @@ public class CalendarMonthView extends CalendarView {
                         mClickDate.setWeek(i);
                         if (mCallBack != null)
                             mCallBack.clickDate(date);
-                        mClickRow = j;
                         updateCellData(j, i, date, State.CLICK_DAY, state);
                         continue;
+                    }
+                    if(date.isSameDay(mClickHideDate)){
+                        mClickHideDate.setWeek(i);
+                        if (mCallBack != null)
+                            mCallBack.showDate(date);
                     }
                     if (isCurrentMonth && day == monthDay) {
                         updateCellData(j, i, date, State.TODAY, state);
@@ -134,6 +143,7 @@ public class CalendarMonthView extends CalendarView {
 
         mShowDate = showDate;
         mClickDate = clickDate;
+        mClickHideDate = clickDate;
         fillMonthDate(false);
         invalidate();
     }
@@ -143,11 +153,6 @@ public class CalendarMonthView extends CalendarView {
         return mClickDate;
     }
 
-    @Override
-    public CustomDate getShowDate() {
-
-        return rows[mClickRow].cells[TOTAL_COL - 1].date;
-    }
 
     @Override
     public RecordState getRecordDateState(CustomDate date) {
@@ -158,10 +163,6 @@ public class CalendarMonthView extends CalendarView {
         return state != null ? state : RecordState.UnSign;
     }
 
-    @Override
-    public int getClickRow() {
-        return mClickRow;
-    }
 
 
     public void rightSlide() {

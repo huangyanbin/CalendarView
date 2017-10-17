@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.palmwifi.testcal.calendar.CalendarView;
 import com.palmwifi.testcal.calendar.CalendarViewBuilder;
@@ -28,7 +29,7 @@ public class CalendarActivity extends AppCompatActivity implements OnCalenderLis
     private ImageView rightImg;
     private int rows;
     private Handler mHandler = new Handler();
-    private CustomDate mClickDate;
+    private CustomDate mShowDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class CalendarActivity extends AppCompatActivity implements OnCalenderLis
         setContentView(R.layout.activity_main);
         monthViewPager = (ViewPager) findViewById(R.id.viewpager);
         mDateTv = (TextView) findViewById(R.id.tv_show_date);
-        monthViews = CalendarViewBuilder.createMonthCalendarViews(this, 5, this);
+        monthViews = CalendarViewBuilder.createMonthCalendarViews(this, 5,false, this);
         leftImg = (ImageView) findViewById(R.id.img_cal_left);
         rightImg = (ImageView) findViewById(R.id.img_cal_right);
 
@@ -64,8 +65,13 @@ public class CalendarActivity extends AppCompatActivity implements OnCalenderLis
 
     @Override
     public void clickDate(CustomDate date) {
-        if (mClickDate == null || !date.isSameDay(mClickDate)) {
-            mClickDate = date;
+        Toast.makeText(this,"点击"+date.toString(),Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showDate(CustomDate date) {
+        if (mShowDate == null || !date.isSameDay(mShowDate)) {
+            mShowDate = date;
             mDateTv.setText(date.year + "年" + date.month + "月");
         }
     }

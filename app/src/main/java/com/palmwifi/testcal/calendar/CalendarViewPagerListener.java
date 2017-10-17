@@ -10,6 +10,7 @@ public class CalendarViewPagerListener implements OnPageChangeListener {
 	int mCurrIndex = 498;
 	private CalendarView[] mShowViews;
 	private ViewPager mPager;
+	private boolean isAutoClickFristDay = true;
 
 	public CalendarViewPagerListener(ViewPager viewPager, CalendarViewPagerAdapter<CalendarView> viewAdapter) {
 		this.mShowViews = viewAdapter.getAllItems();
@@ -54,11 +55,7 @@ public class CalendarViewPagerListener implements OnPageChangeListener {
 	}
 
 	
-	public int getCalendarRow(){
-		CalendarView calendar = mShowViews[mPager.getCurrentItem() % mShowViews.length];
-		return calendar.getClickRow();
-		
-	}
+
 	
 	public CalendarView getCurrentCalendar(){
 		return mShowViews[mPager.getCurrentItem() % mShowViews.length];
@@ -71,7 +68,7 @@ public class CalendarViewPagerListener implements OnPageChangeListener {
 		calendar.update();
 	}
 	
-	public void backTaody(){
+	public void backToday(){
 		CalendarView calendar = mShowViews[mPager.getCurrentItem() % mShowViews.length];
 		calendar.backToday();
 	}

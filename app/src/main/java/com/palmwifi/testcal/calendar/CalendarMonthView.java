@@ -51,6 +51,7 @@ public class CalendarMonthView extends CalendarView {
         }
         CustomDate date = cell.date;
         mClickDate = date;
+        mClickHideDate = date;
         fillMonthDate(false);
         invalidate();
     }
@@ -70,15 +71,16 @@ public class CalendarMonthView extends CalendarView {
         boolean isCurrentMonth = false;
         if (DateUtil.isCurrentMonth(mShowDate)) {
             isCurrentMonth = true;
-            if (isChangeClick)
+            if (isChangeClick) {
                 mClickHideDate = CustomDate.modifiDayForObject(mShowDate, monthDay, 0);
                 mClickDate = CustomDate.modifiDayForObject(mShowDate, monthDay, 0);
+            }
 
         } else {
             if (isChangeClick) {
                 if(isAutoClickFirstDay())
                     mClickDate = CustomDate.modifiDayForObject(mShowDate, 1, 0);
-                mClickHideDate = CustomDate.modifiDayForObject(mShowDate, monthDay, 0);
+                    mClickHideDate = CustomDate.modifiDayForObject(mShowDate, monthDay, 0);
             }
         }
         int day = 0;

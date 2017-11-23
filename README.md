@@ -5,6 +5,8 @@ CalendarView
 #####  包含三个自定义View 日历仪表盘 圆盘
 ---------------------------------------
 > 这是使用RecyclerView做的日历，比之前ViewPager不管从逻辑，功能更加强大，实现更加简单。之前ViewPager的日历没有功能逻辑分离，这次提供全新IDrawFormat接口，比如你需要针对某些日期增加标签，你就可以实现IDrawFormat,然后addDrawFormat就可以了，这样就实现标签和其他逻辑混合导致逻辑混乱，按顺序多层绘制，默认只提供文字层（日历日期和农历），但也需要自己add。你可以设置先后顺序，完美实现所有功能。可以支持任何样式。当前前提你会一点Android canvas绘制。月模式也完成，以后会提供小米日历类似功能。
+
+
 ![github](new.gif)
 
 ![github](screenshort.gif)

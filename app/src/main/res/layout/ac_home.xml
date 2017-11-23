@@ -3,8 +3,20 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:gravity="center"
     android:layout_height="match_parent">
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_new_month_cal"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="RecyclerView日历 月模式"
 
+        />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_new_week_cal"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="RecyclerView日历 星期模式"
 
+        />
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_cal"
         android:layout_width="200dp"

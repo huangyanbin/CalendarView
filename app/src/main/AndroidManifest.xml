@@ -19,7 +19,8 @@
         <activity android:name=".CalendarActivity"/>
         <activity android:name=".DashBoardActivity"/>
         <activity android:name=".RingActivity"/>
-
+        <activity android:name=".CalendarMonthActivity"/>
+        <activity android:name=".CalendarWeekActivity"/>
     </application>
 
 </manifest>
